@@ -20,6 +20,10 @@ class API < Grape::API
     p 'POST'
     {woot: true, provider: params[:provider]}
   end
+
+  post '/github_webhook' do
+    p params
+  end
 end
 
 App = Rack::Builder.new do
