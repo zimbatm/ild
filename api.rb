@@ -1,4 +1,5 @@
 require 'grape'
+require 'json'
 require 'octokit'
 require 'omniauth/strategies/github'
 
