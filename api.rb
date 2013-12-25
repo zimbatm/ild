@@ -22,7 +22,7 @@ class API < Grape::API
   end
 
   post '/github_webhook' do
-    p params
+    p JSON.parse(params[:payload])
   end
 end
 
