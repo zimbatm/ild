@@ -1,3 +1,3 @@
 require File.expand_path('../boot', __FILE__)
-require 'api'
-run App
+require 'ild/app'
+run Ild::App
