@@ -10,11 +10,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1024"]
   end 
+
+  config.vm.network "forwarded_port", guest: 4243, host: 4243
+
   # Install docker
   config.vm.provision "shell", inline: <<EOF
 export DEBIAN_FRONTEND=noninteractive
 wget -O - https://get.docker.io/gpg | apt-key add -
 echo deb http://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list
+echo 'DOCKER_OPTS="-H unix:///var/run/docker.sock -H tcp://0.0.0.0:4243 -api-enable-cors"' > /etc/default/docker
 apt-get update -q
 apt-get install -qy lxc-docker
 usermod -G docker vagrant

@@ -1,0 +1,5 @@
+#!/bin/sh
+cd `dirname $0`/../bin
+wget -Odocker-latest \
+  http://tianon-docker.s3-website-us-west-2.amazonaws.com/builds/`uname`/x86_64/docker-latest
+chmod +x docker-latest

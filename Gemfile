@@ -1,14 +1,14 @@
 source 'http://rubygems.org'
 gemspec
 
-# http://intridea.github.io/grape/
-gem 'grape'
-# https://github.com/octokit/octokit.rb
-gem 'octokit'
-# https://github.com/intridea/omniauth-github
-gem 'omniauth-github'
-gem 'puma'
-gem 'sinatra'
+gem 'addressable'
+gem 'excon' # https://github.com/geemus/excon
+gem 'json'
+gem 'octokit' # https://github.com/octokit/octokit.rb
+gem 'omniauth-github' # https://github.com/intridea/omniauth-github
+gem 'sinatra' # http://www.sinatrarb.com/intro.html
+gem 'sinatra-contrib' # http://www.sinatrarb.com/contrib/
+gem 'thin'
 
 group :development do
   gem 'pry'
