@@ -1,0 +1,4 @@
+#!/bin/sh
+echo Forwarding traffic from :4343 to localhost:4243
+socat -v TCP4-LISTEN:4343,reuseaddr,fork TCP:localhost:4243
+

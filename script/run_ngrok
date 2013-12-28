@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ngrok -subdomain=ild 5000
